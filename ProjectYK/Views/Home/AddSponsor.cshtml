@@ -1,0 +1,25 @@
+﻿@model ProjectYK.Models.Sponsor
+@{
+    ViewBag.Title = "Добавление организатора мероприятия";
+}
+<form asp-action="AddSponsor" asp-controller="Home">
+    <div class="form-group">
+        <label for="Name">Название</label>
+        <input type="text" asp-for="Name" class="form-control" name="Name" />
+    </div>
+    <div class="form-group">
+        <label for="Phone">Телефон</label>
+        <input type="text" asp-for="Phone" class="form-control" name="Phone" />
+    </div>
+    <div class="form-group">
+        <label for="Email">E-mail</label>
+        <input type="text" asp-for="Email" class="form-control" name="Email" />
+    </div>
+    <div class="form-group">
+        <label for="Address">Адрес</label>
+        <input type="text" asp-for="Address" class="form-control" name="Address" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Добавить" class="btn" />
+    </div>
+</form>

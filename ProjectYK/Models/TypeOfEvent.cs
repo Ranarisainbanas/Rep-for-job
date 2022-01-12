@@ -7,7 +7,7 @@ namespace ProjectYK.Models
 {
     public class TypeOfEvent
     {
-        public int ID { get; set; } //Id типа события
+        public int Id { get; set; } //Id типа события
         public string Type_Text { get; set; }    //Тип события (вид деятельности)
     }
 }

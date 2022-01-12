@@ -1,8 +1,28 @@
-﻿@{
+﻿@model IEnumerable<ProjectYK.Models.Sponsor>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<a asp-action="AddSponsor" asp-controller="Home">Добавить организатора</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="thead-light">Организатор</th>
+            <th class="thead-light">Телефон</th>
+            <th class="thead-light">E-mail</th>
+            <th class="thead-light">Адрес</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {                
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Email</td>
+                    <td>@item.Address</td>
+                </tr>
+            }
+    </tbody>    
+</table>
+

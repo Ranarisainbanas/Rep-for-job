@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProjectYK.Models;
 using System;
@@ -10,22 +11,29 @@ using System.Threading.Tasks;
 namespace ProjectYK.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+    {        
+        private DBClass db;
+        public HomeController(DBClass context)
         {
-            _logger = logger;
+            db = context;            
+        }        
+                
+        public async Task<IActionResult> Index()
+        {
+            return View(await db.Sponsors.ToListAsync());
         }
 
-        public IActionResult Index()
+        public IActionResult AddSponsor()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public async Task<IActionResult> AddSponsor(Sponsor sponsor)
         {
-            return View();
+            db.Sponsors.Add(sponsor);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -33,5 +41,7 @@ namespace ProjectYK.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
     }
 }

@@ -7,7 +7,7 @@ namespace ProjectYK.Models
 {
     public class Sponsor
     {
-        public int ID { get; set; } //Id организатора
+        public int Id { get; set; } //Id организатора
         public string Name { get; set; }    //Название компании
         public string Phone { get; set; }   //Телефон для свзяи с организацией
         public string Email { get; set; }   //Емейл организации
