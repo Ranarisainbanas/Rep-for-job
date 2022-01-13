@@ -27,7 +27,6 @@ namespace ProjectYK.Controllers
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> AddSponsor(Sponsor sponsor)
         {
@@ -42,6 +41,40 @@ namespace ProjectYK.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
+        public IActionResult AddType()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddType(TypeOfEvent type)
+        {
+            db.typeOfEvents.Add(type);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult AddPlace()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddPlace(Place place)
+        {
+            db.Places.Add(place);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult AddEvent()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddEvent(Event Event)
+        {
+            db.Events.Add(Event);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

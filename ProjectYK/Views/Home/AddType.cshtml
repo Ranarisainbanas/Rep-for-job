@@ -1,0 +1,13 @@
+﻿@model ProjectYK.Models.TypeOfEvent
+@{
+    ViewBag.Title = "Добавление нового типа мероприятий";
+}
+<form asp-action="AddType" asp-controller="Home">
+    <div class="form-group">
+        <label for="Type_Text">Укажите тип мероприятия</label>
+        <input type="text" asp-for="Type_Text" class="form-control" name="Type_Text" />
+    </div>        
+    <div class="form-group">
+        <input type="submit" value="Добавить" class="btn-light" />
+    </div>
+</form>
