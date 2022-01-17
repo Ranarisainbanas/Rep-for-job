@@ -1,5 +1,90 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ProjectYK.Models.Event
 @{
+    ViewBag.Title = "Добавление организатора мероприятия";
 }
+<form asp-action="AddEvent" asp-controller="Home">
+    <div class="form-group">
+        <label for="Spon_Id">Организатор</label>
+        <input type="text" asp-for="Spon_Id" class="form-control" name="Spon_Id" />
+    </div>
+    <div class="form-group">
+        <label for="Type_Id">Тип события</label>
+        <input type="text" asp-for="Type_Id" class="form-control" name="Type_Id" />
+    </div>
+    <div class="form-group">
+        <label for="Name">Название события</label>
+        <input type="text" asp-for="Name" class="form-control" name="Name" />
+    </div>
+    <div class="form-group">
+        <label for="Description">Описание</label>
+        <input type="text" asp-for="Description" class="form-control" name="Description" />
+    </div>
+    <div class="form-group">
+        <label for="Place_Id">Место проведения</label>
+        <input type="text" asp-for="Place_Id" class="form-control" name="Place_Id" />
+    </div>
+    <div class="form-group">
+        <label for="Address">Точный адрес</label>
+        <input type="text" asp-for="Address" class="form-control" name="Address" />
+    </div>
+    <div class="form-group">
+        <label for="Start_Time">Время начала</label>
+        <input type="text" asp-for="Start_Time" class="form-control" name="Start_Time" />
+    </div>
+    <div class="form-group">
+        <label for="Finish_Time">Время завершения</label>
+        <input type="text" asp-for="Finish_Time" class="form-control" name="Finish_Time" />
+    </div>
+    <div class="form-group">
+        <label for="Start_Day">Дата начала</label>
+        <input type="text" asp-for="Start_Day" class="form-control" name="Start_Day" />
+    </div>
+    <div class="form-group">
+        <label for="Finish_Day">Дата завершения</label>
+        <input type="text" asp-for="Finish_Day" class="form-control" name="Finish_Day" />
+    </div>
+    <div class="form-group">
+        <label for="Recurs">Повторение</label>
+        <select asp-for="Recurs" class="form-control" name="Recurs">
+            <option selected value="0">Без повторений</option>
+            <option value="1">Ежедневно</option>
+            <option value="2">Еженедельно</option>
+            <option value="3">Ежемесячно</option>
+        </select>        
+    </div>
+    <div class="form-group">
+        <label for="Recurs_Interval">Интервал повторения</label>
+        <input type="text" asp-for="Recurs_Interval" class="form-control" name="Recurs_Interval" max="365" min="0" value="0" />
+    </div>
+    <div class="form-group">
+        <label for="Recurs_Day_Number">Число месяца</label>
+        <input type="text" asp-for="Recurs_Day_Number" class="form-control" name="Recurs_Day_Number" max="31" min="0" value="0" />
+    </div>
+    <div class="form-group">
+        <label for="Recurs_Serial_Day">Порядковый номер дня</label>
+        <select asp-for="Recurs_Serial_Day" class="form-control" name="Recurs_Serial_Day">
+            <option selected value="0" disabled>Порядковый номер дня</option>
+            <option value="1">Первый</option>
+            <option value="2">Второй</option>
+            <option value="3">Третий</option>
+            <option value="4">Четвертый</option>
+            <option value="5">Последний</option>
+        </select>        
+    </div>
+    <div class="form-group">
+        <label for="Recurs_Day_of_Week">День недели</label>
+        <select asp-for="Recurs_Day_of_Week" class="form-control" multiple name="Recurs_Day_of_Week">
+            <option selected value="0">Без повторений</option>
+            <option value="1">Понедельник</option>
+            <option value="2">Вторник</option>
+            <option value="4">Среда</option>
+            <option value="8">Четверг</option>
+            <option value="16">Пятница</option>
+            <option value="32">Суббота</option>
+            <option value="64">Воскресенье</option>
+        </select>        
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Добавить" class="btn-light" />
+    </div>
+</form>

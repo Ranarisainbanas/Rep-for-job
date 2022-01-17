@@ -20,7 +20,7 @@ namespace ProjectYK.Controllers
                 
         public async Task<IActionResult> Index()
         {
-            return View(await db.Sponsors.ToListAsync());
+            return View(await db.Events.ToListAsync());
         }
 
         public IActionResult AddSponsor()
