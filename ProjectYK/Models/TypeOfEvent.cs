@@ -9,5 +9,6 @@ namespace ProjectYK.Models
     {
         public int Id { get; set; } //Id типа события
         public string Type_Text { get; set; }    //Тип события (вид деятельности)
+        public string Description { get; set; }    //Описание
     }
 }
