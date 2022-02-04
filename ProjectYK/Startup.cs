@@ -27,7 +27,7 @@ namespace ProjectYK
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBClass>(options => options.UseSqlServer(connection));
-            services.AddControllersWithViews();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,9 +52,7 @@ namespace ProjectYK
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
         }
     }

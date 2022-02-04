@@ -12,46 +12,46 @@
 <a asp-action="AddType" asp-controller="Home">Добавить тип событий</a>
 <br />
 
-<table class="table">
-    <thead>
-        <tr>
-            <th class="thead-light">Организатор</th>
-            <th class="thead-light">Тип события</th>
-            <th class="thead-light">Название события</th>
-            <th class="thead-light">Описание</th>
-            <th class="thead-light">Место провидения</th>
-            <th class="thead-light">Точный адрес</th>
-            <th class="thead-light">Время начала</th>
-            <th class="thead-light">Время завершения</th>
-            <th class="thead-light">Дата начала</th>
-            <th class="thead-light">Дата завершения</th>
-            <th class="thead-light">Тип повторения</th>
-            <th class="thead-light">Интервал</th>
-            <th class="thead-light">Число месяца</th>
-            <th class="thead-light">Порядковый номер дня</th>
-            <th class="thead-light">День недели</th>
-        </tr>
-    </thead>
-    <tbody>        
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>@item.Spon_Id</td>
-            <td>@item.Type_Id</td>
-            <td>@item.Name</td>
-            <td>@item.Description</td>
-            <td>@item.Place_Id</td>
-            <td>@item.Address</td>
-            <td>@item.Start_Time</td>
-            <td>@item.Finish_Time</td>
-            <td>@item.Start_Day</td>
-            <td>@item.Finish_Day</td>
-            <td>@item.Recurs</td>
-            <td>@item.Recurs_Interval</td>
-            <td>@item.Recurs_Day_Number</td>
-            <td>@item.Recurs_Serial_Day</td>
-            <td>@item.Recurs_Day_of_Week</td>            
-        </tr>
-        }
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="thead-light">Организатор</th>
+                <th class="thead-light">Тип события</th>
+                <th class="thead-light">Название события</th>
+                <th class="thead-light">Описание</th>
+                <th class="thead-light">Место провидения</th>
+                <th class="thead-light">Точный адрес</th>
+                <th class="thead-light">Время начала</th>
+                <th class="thead-light">Время завершения</th>
+                <th class="thead-light">Дата начала</th>
+                <th class="thead-light">Дата завершения</th>
+                <th class="thead-light">Тип повторения</th>
+                <th class="thead-light">Интервал</th>
+                <th class="thead-light">Число месяца</th>
+                <th class="thead-light">Порядковый номер дня</th>
+                <th class="thead-light">День недели</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Spon_Id</td>
+                    <td>@item.Type_Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Place_Id</td>
+                    <td>@item.Address</td>
+                    <td>@item.Start_Time</td>
+                    <td>@item.Finish_Time</td>
+                    <td>@item.Start_Day</td>
+                    <td>@item.Finish_Day</td>
+                    <td>@item.Recurs</td>
+                    <td>@item.Recurs_Interval</td>
+                    <td>@item.Recurs_Day_Number</td>
+                    <td>@item.Recurs_Serial_Day</td>
+                    <td>@item.Recurs_Day_of_Week</td>
+                </tr>
+            }
+        </tbody>
+    </table>
