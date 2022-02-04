@@ -8,11 +8,11 @@ namespace ProjectYK.Models
     public class Event
     {
         public int Id { get; set; } //Id события
-        public int Spon_Id { get; set; }  //Id организатора        
-        public int Type_Id { get; set; }   //Id типа события        
+        public int SponsorId { get; set; }  //Id организатора        
+        public int TypeId { get; set; }   //Id типа события        
         public string Name { get; set; }    //Название события
         public string Description { get; set; } //Описание события
-        public int Place_Id { get; set; }   //Id места проведения события        
+        public int PlaceId { get; set; }   //Id места проведения события        
         public string Address { get; set; } //Точный адрес проведения мероприятия
         public DateTime Start_Time { get; set; }    //Время начала
         public DateTime Finish_Time { get; set; }   //Время завершения
